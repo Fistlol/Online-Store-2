@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
+
 import {products} from '../products';
+import {CategoryService} from '../category.service';
 
 @Component({
   selector: 'app-product-item',
@@ -8,10 +10,13 @@ import {products} from '../products';
 })
 export class ProductItemComponent implements OnInit {
   products = products;
-  constructor() {
-  }
+  typeOf = '';
+  constructor(
+    private categoryService: CategoryService
+  ) {}
 
   ngOnInit(): void {
+    this.typeOf = this.categoryService.getCategory();
   }
 
   share(): void {

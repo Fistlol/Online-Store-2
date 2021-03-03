@@ -15,6 +15,8 @@ import {CartComponent} from './cart/cart.component';
 import {ShippingComponent} from './shipping/shipping.component';
 import {ProductItemComponent} from './product-item/product-item.component';
 import {CartService} from './cart.service';
+import { CategoryComponent } from './category/category.component';
+import { LikesComponent } from './likes/likes.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import {CartService} from './cart.service';
     ProductDetailsComponent,
     CartComponent,
     ShippingComponent,
-    ProductItemComponent
+    ProductItemComponent,
+    CategoryComponent,
+    LikesComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +41,8 @@ import {CartService} from './cart.service';
     ShareIconsModule,
     RouterModule.forRoot([
       // {path: '', component: ProductListComponent},
-      {path: '', component: ProductItemComponent},
+      {path: '', component: CategoryComponent},
+      {path: 'list', component: ProductItemComponent},
       {path: 'products/:productId', component: ProductDetailsComponent},
       {path: 'cart', component: CartComponent},
       {path: 'shipping', component: ShippingComponent},
